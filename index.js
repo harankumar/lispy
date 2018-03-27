@@ -5,7 +5,7 @@
     const file = process.argv[2]
     const program = fs.readFileSync(file).toString()
 
-    console.log(walk(parse(tokenize(program))))
+    console.log(walk(parse(tokenize(program)), {}))
 })()
 
 function tokenize(program) {
@@ -73,10 +73,61 @@ function parse(tokens) {
     }
 
     // un-nest
-    return program[0][0]
+    return program[0]
 }
 
-function walk(ast) {
-    // TODO -- make this do stuff!!!
-    return JSON.stringify(ast)
+function walk(ast, vars) {
+    if (! Array.isArray(ast)){
+        if (ast.type === "symbol"){
+            return vars[ast.value]
+        } else {
+            return ast.value;
+        }
+    }
+
+    if (ast.length === 1){
+        return walk(ast[0], vars)
+    }
+
+    if (Array.isArray(ast[0])){
+        let ret = []
+        for (let el of ast){
+            ret.push(walk(el, vars))
+        }
+        return ret
+    }
+
+    switch(ast[0].value){
+        case "+":
+            return add(ast, vars)
+        case "*":
+            return mul(ast, vars)
+        case "defvar":
+            return defvar(ast, vars)
+    }
+
+    return ast
+}
+
+function add(ast, vars){
+    let ret = 0
+
+    for (let i = 1; i < ast.length; i++)
+        ret += walk(ast[i], vars)
+
+    return ret
+}
+
+function mul(ast, vars){
+    let ret = 1
+
+    for (let i = 1; i < ast.length; i++)
+        ret *= walk(ast[i], vars)
+
+    return ret
+}
+
+function defvar(ast, vars){
+    vars[ast[1].value] = walk(ast[2], vars)
+    return "" // TODO -- is this the right thing? maybe should be null
 }

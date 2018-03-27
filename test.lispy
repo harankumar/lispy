@@ -1,1 +1,7 @@
-(print "Hello World!")
+(defvar foo 1)
+
+(defvar bar 123)
+
+(+ foo bar bar)
+
+(* foo bar bar)
