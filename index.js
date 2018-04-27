@@ -102,6 +102,14 @@ function walk(ast, vars) {
             return add(ast, vars)
         case "*":
             return mul(ast, vars)
+        case "-":
+            return sub(ast, vars)
+        case "/":
+            return div(ast, vars)
+        case "%":
+            return mod(ast, vars)
+        case "//":
+            return intdiv(ast, vars)
 
         case "and":
             return and(ast, vars)
@@ -133,6 +141,22 @@ function mul(ast, vars){
         ret *= walk(ast[i], vars)
 
     return ret
+}
+
+function sub(ast, vars){
+    return walk(ast[1], vars) - walk(ast[2], vars)
+}
+
+function div(ast, vars){
+    return walk(ast[1], vars) / walk(ast[2], vars)
+}
+
+function intdiv(ast, vars){
+    return Math.floor(walk(ast[1], vars) / walk(ast[2], vars))
+}
+
+function mod(ast, vars){
+    return walk(ast[1], vars) % walk(ast[2], vars)
 }
 
 function and(ast, vars){
