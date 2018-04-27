@@ -102,6 +102,14 @@ function walk(ast, vars) {
             return add(ast, vars)
         case "*":
             return mul(ast, vars)
+
+        case "and":
+            return and(ast, vars)
+        case "or":
+            return or(ast, vars)
+        case "not":
+            return not(ast, vars)
+
         case "defvar":
             return defvar(ast, vars)
     }
@@ -125,6 +133,28 @@ function mul(ast, vars){
         ret *= walk(ast[i], vars)
 
     return ret
+}
+
+function and(ast, vars){
+    let ret = true
+
+    for (let i = 1; i < ast.length; i++)
+        ret = ret && walk(ast[i], vars)
+
+    return ret
+}
+
+function or(ast, vars){
+    let ret = true
+
+    for (let i = 1; i < ast.length; i++)
+        ret = ret || walk(ast[i], vars)
+
+    return ret
+}
+
+function not(ast, vars){
+    return ! walk(ast[0], vars)
 }
 
 function defvar(ast, vars){

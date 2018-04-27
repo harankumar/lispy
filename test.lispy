@@ -5,3 +5,13 @@
 (+ foo bar bar)
 
 (* foo bar bar)
+
+(defvar baz true)
+
+(defvar bop false)
+
+(and baz bop)
+
+(or baz bop)
+
+(not baz)
