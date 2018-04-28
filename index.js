@@ -77,27 +77,27 @@ function parse(tokens) {
 }
 
 function walk(ast, vars) {
-    if (! Array.isArray(ast)){
-        if (ast.type === "symbol"){
+    if (!Array.isArray(ast)) {
+        if (ast.type === "symbol") {
             return vars[ast.value]
         } else {
             return ast.value;
         }
     }
 
-    if (ast.length === 1){
+    if (ast.length === 1) {
         return walk(ast[0], vars)
     }
 
-    if (Array.isArray(ast[0])){
+    if (Array.isArray(ast[0])) {
         let ret = []
-        for (let el of ast){
+        for (let el of ast) {
             ret.push(walk(el, vars))
         }
         return ret
     }
 
-    switch(ast[0].value){
+    switch (ast[0].value) {
         case "+":
             return add(ast, vars)
         case "*":
@@ -127,7 +127,7 @@ function walk(ast, vars) {
     return ast
 }
 
-function add(ast, vars){
+function add(ast, vars) {
     let ret = 0
 
     for (let i = 1; i < ast.length; i++)
@@ -136,7 +136,7 @@ function add(ast, vars){
     return ret
 }
 
-function mul(ast, vars){
+function mul(ast, vars) {
     let ret = 1
 
     for (let i = 1; i < ast.length; i++)
@@ -145,23 +145,23 @@ function mul(ast, vars){
     return ret
 }
 
-function sub(ast, vars){
+function sub(ast, vars) {
     return walk(ast[1], vars) - walk(ast[2], vars)
 }
 
-function div(ast, vars){
+function div(ast, vars) {
     return walk(ast[1], vars) / walk(ast[2], vars)
 }
 
-function intdiv(ast, vars){
+function intdiv(ast, vars) {
     return Math.floor(walk(ast[1], vars) / walk(ast[2], vars))
 }
 
-function mod(ast, vars){
+function mod(ast, vars) {
     return walk(ast[1], vars) % walk(ast[2], vars)
 }
 
-function and(ast, vars){
+function and(ast, vars) {
     let ret = true
 
     for (let i = 1; i < ast.length; i++)
@@ -170,7 +170,7 @@ function and(ast, vars){
     return ret
 }
 
-function or(ast, vars){
+function or(ast, vars) {
     let ret = true
 
     for (let i = 1; i < ast.length; i++)
@@ -179,16 +179,16 @@ function or(ast, vars){
     return ret
 }
 
-function not(ast, vars){
-    return ! walk(ast[0], vars)
+function not(ast, vars) {
+    return !walk(ast[0], vars)
 }
 
-function defvar(ast, vars){
+function defvar(ast, vars) {
     vars[ast[1].value] = walk(ast[2], vars)
     return "" // TODO -- is this the right thing? maybe should be null
 }
 
-function set(ast, vars){
+function set(ast, vars) {
     vars[ast[1].value] = walk(ast[2], vars)
     return ""
 }
