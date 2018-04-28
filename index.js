@@ -120,6 +120,8 @@ function walk(ast, vars) {
 
         case "defvar":
             return defvar(ast, vars)
+        case "set":
+            return set(ast, vars)
     }
 
     return ast
@@ -184,4 +186,9 @@ function not(ast, vars){
 function defvar(ast, vars){
     vars[ast[1].value] = walk(ast[2], vars)
     return "" // TODO -- is this the right thing? maybe should be null
+}
+
+function set(ast, vars){
+    vars[ast[1].value] = walk(ast[2], vars)
+    return ""
 }

@@ -23,3 +23,7 @@
 (or baz bop)
 
 (not baz)
+
+(set foo 3)
+
+(foo)
