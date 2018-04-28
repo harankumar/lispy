@@ -122,6 +122,12 @@ function walk(ast, vars) {
             return defvar(ast, vars)
         case "set":
             return set(ast, vars)
+        case "defun":
+            return defun(ast, vars)
+
+        default:
+            // It's a function!
+            return call(ast, vars)
     }
 
     return ast
@@ -191,4 +197,33 @@ function defvar(ast, vars) {
 function set(ast, vars) {
     vars[ast[1].value] = walk(ast[2], vars)
     return ""
+}
+
+function defun(ast, vars) {
+    const name = ast[1].value
+    const params = ast[2]
+    const block = ast[3]
+
+    const func = function () {
+        const args = {}
+        let i = 0
+        for (let param of params) {
+            args[param.value] = arguments[i]
+            i++
+        }
+
+        // Functions can't access global scope
+        return walk(block, args)
+    }
+
+    vars[name] = func
+
+    return ""
+}
+
+function call(ast, vars) {
+    const func = vars[ast[0].value]
+    const args = ast.slice(1).map(walk)
+
+    return func(args)
 }

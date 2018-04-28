@@ -27,3 +27,7 @@
 (set foo 3)
 
 (foo)
+
+(defun square (x) (* x x))
+
+(square 10)
