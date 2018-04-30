@@ -59,6 +59,4 @@ function walk(ast, vars) {
             // It's a function!
             return functions.call(ast, vars)
     }
-
-    return ast
 }
