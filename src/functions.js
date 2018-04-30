@@ -28,9 +28,23 @@ function defun(ast, vars) {
     return ""
 }
 
+function map(ast, vars) {
+    const func = vars[ast[1].value]
+    const list = ast[2].map(walk)
+
+    console.log(ast[2])
+
+    return list.map(func)
+}
+
 function call(ast, vars) {
-    if (html.is_tag(ast[0].value)){
+    if (html.is_tag(ast[0].value)) {
         return html.tag_render(ast, vars)
+    }
+
+    switch (ast[0].value) {
+        case "map":
+            return map(ast, vars)
     }
 
     const func = vars[ast[0].value]
