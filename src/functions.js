@@ -4,6 +4,7 @@ module.exports = {
 }
 
 const walk = require("./walk")
+const html = require("./html")
 
 function defun(ast, vars) {
     const name = ast[1].value
@@ -28,6 +29,12 @@ function defun(ast, vars) {
 }
 
 function call(ast, vars) {
+    if (html.is_tag(ast[0].value)){
+        return html.tag_render(ast, vars)
+    }
+
+    console.log(ast[0].value)
+
     const func = vars[ast[0].value]
     const args = ast.slice(1).map(walk)
 
