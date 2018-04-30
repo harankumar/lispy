@@ -30,9 +30,7 @@ function defun(ast, vars) {
 
 function map(ast, vars) {
     const func = vars[ast[1].value]
-    const list = ast[2].map(walk)
-
-    console.log(ast[2])
+    const list = walk(ast[2], walk)
 
     return list.map(func)
 }
@@ -71,6 +69,8 @@ function call(ast, vars) {
             return map(ast, vars)
         case "range":
             return range(ast, vars)
+        case "list":
+            return ast.slice(1).map((x) => walk(x, vars))
     }
 
     const func = vars[ast[0].value]
