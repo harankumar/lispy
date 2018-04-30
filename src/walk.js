@@ -23,7 +23,7 @@ function walk(ast, vars) {
         for (let el of ast) {
             ret.push(walk(el, vars))
         }
-        return ret
+        return ret.filter((x) => x !== "").join("\n")
     }
 
     switch (ast[0].value) {
