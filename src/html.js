@@ -4,8 +4,9 @@ module.exports = {
 }
 
 const walk = require("./walk")
+const fs = require("fs")
 
-const tags = new Set(["html", "head", "body", "div", "span", "b", "i"])
+const tags = new Set(JSON.parse(fs.readFileSync("./tags.json")))
 
 function is_tag(tag) {
     return tags.has(tag)

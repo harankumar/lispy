@@ -33,8 +33,6 @@ function call(ast, vars) {
         return html.tag_render(ast, vars)
     }
 
-    console.log(ast[0].value)
-
     const func = vars[ast[0].value]
     const args = ast.slice(1).map(walk)
 
