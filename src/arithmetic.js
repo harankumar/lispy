@@ -10,7 +10,7 @@ module.exports = {
 const walk = require("./walk")
 
 function add(ast, vars) {
-    let ret = 0
+    let ret = ast[1].type === "string" ? "" : 0
 
     for (let i = 1; i < ast.length; i++)
         ret += walk(ast[i], vars)

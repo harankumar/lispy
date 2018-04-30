@@ -2,6 +2,6 @@
 (head)
 (body
     (div "Alec Loves Spark")
-    (b "Michael Loves Spark")
+    (b (+ "Michael " (i "really") " loves spark"))
 )
 )
