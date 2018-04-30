@@ -37,6 +37,30 @@ function map(ast, vars) {
     return list.map(func)
 }
 
+function range(ast, vars) {
+    // Emulates Python range() function
+    let start, stop, step = 1
+
+    switch (ast.length) {
+        case 2:
+            start = 0
+            stop = walk(ast[1], vars)
+            break;
+        case 4:
+            step = walk(ast[3], vars)
+        case 3:
+            start = walk(ast[1], vars)
+            stop = walk(ast[2], vars)
+    }
+
+    const ret = []
+
+    for (let i = start; i < stop; i += step)
+        ret.push(i)
+
+    return ret
+}
+
 function call(ast, vars) {
     if (html.is_tag(ast[0].value)) {
         return html.tag_render(ast, vars)
@@ -45,6 +69,8 @@ function call(ast, vars) {
     switch (ast[0].value) {
         case "map":
             return map(ast, vars)
+        case "range":
+            return range(ast, vars)
     }
 
     const func = vars[ast[0].value]
