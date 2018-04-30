@@ -7,4 +7,8 @@ const walk = require("./walk")
 const file = process.argv[2]
 const program = fs.readFileSync(file).toString()
 
-console.log(walk(parser.parse(parser.tokenize(program)), {}))
+const output = walk(parser.parse(parser.tokenize(program)), {})
+
+// Output to file
+const outputFile = file.split(".").slice(0, -1).join(".") + ".html"
+fs.writeFileSync(outputFile, output)
