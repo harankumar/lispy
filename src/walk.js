@@ -14,16 +14,12 @@ function walk(ast, vars) {
         }
     }
 
-    if (ast.length === 1) {
-        return walk(ast[0], vars)
-    }
-
     if (Array.isArray(ast[0])) {
         let ret = []
         for (let el of ast) {
             ret.push(walk(el, vars))
         }
-        return ret.filter((x) => x !== "").join("\n")
+        return ret
     }
 
     switch (ast[0].value) {
