@@ -4,4 +4,6 @@
 
 (square 100)
 
-(map square (1 2 3 4))
+(range 10)
+
+(map square (range 10))
