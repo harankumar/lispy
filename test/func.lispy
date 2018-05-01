@@ -12,6 +12,7 @@
 (if true "it's true!" "it's false")
 (if false "it's true!" "it's false")
 
+# Can't do + just yet b/c it's a "special" function
 (defun add (x y) (+ x y))
 (reduce add 0 (list 1 2 3 4 5))
 

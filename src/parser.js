@@ -5,6 +5,7 @@ module.exports = {
 }
 
 function tokenize(program) {
+    program = program.replace(/#[^\n]*\n/g, "")
     const tokens = []
     const string_split = program.split('"')
 
@@ -24,7 +25,6 @@ function tokenize(program) {
             tokens.push(`"${string_split[i]}"`)
         }
     }
-
     return tokens.map(classify)
 }
 
