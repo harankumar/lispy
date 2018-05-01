@@ -87,5 +87,5 @@ function call(ast, vars) {
     const func = vars[ast[0].value]
     const args = ast.slice(1).map(walk)
 
-    return func(args)
+    return func(...args)
 }

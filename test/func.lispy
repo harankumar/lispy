@@ -11,3 +11,6 @@
 
 (if true "it's true!" "it's false")
 (if false "it's true!" "it's false")
+
+(defun foo (x y) (+ x y))
+(foo 10 10)
