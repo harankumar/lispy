@@ -59,6 +59,15 @@ function range(ast, vars) {
     return ret
 }
 
+function _if(ast, vars) {
+    const test = walk(ast[1], vars)
+
+    if (test)
+        return walk(ast[2], vars)
+    else
+        return walk(ast[3], vars)
+}
+
 function call(ast, vars) {
     if (html.is_tag(ast[0].value)) {
         return html.tag_render(ast, vars)
@@ -71,6 +80,8 @@ function call(ast, vars) {
             return range(ast, vars)
         case "list":
             return ast.slice(1).map((x) => walk(x, vars))
+        case "if":
+            return _if(ast, vars)
     }
 
     const func = vars[ast[0].value]
