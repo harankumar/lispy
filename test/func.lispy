@@ -14,3 +14,6 @@
 
 (defun add (x y) (+ x y))
 (reduce add 0 (list 1 2 3 4 5))
+
+(defun big (x) (> x 9000))
+(filter big (list 1 2 10000 1 9999999))

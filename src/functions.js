@@ -67,6 +67,13 @@ function reduce(ast, vars) {
     return list.reduce(func, init)
 }
 
+function filter(ast, vars){
+    const func = vars[ast[1].value]
+    const list = walk(ast[2], vars)
+
+    return list.filter(func)
+}
+
 function _if(ast, vars) {
     const test = walk(ast[1], vars)
 
@@ -92,6 +99,8 @@ function call(ast, vars) {
             return _if(ast, vars)
         case "reduce":
             return reduce(ast, vars)
+        case "filter":
+            return filter(ast, vars)
     }
 
     const func = vars[ast[0].value]
