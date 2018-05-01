@@ -4,6 +4,7 @@ const arithmetic = require("./arithmetic")
 const logic = require("./logic")
 const variables = require("./variables")
 const functions = require("./functions")
+const comparison = require("./comparison")
 
 function walk(ast, vars) {
     if (!Array.isArray(ast)) {
@@ -35,6 +36,19 @@ function walk(ast, vars) {
             return arithmetic.mod(ast, vars)
         case "//":
             return arithmetic.intdiv(ast, vars)
+
+        case "=":
+            return comparison.eq(ast, vars)
+        case "<":
+            return comparison.lt(ast, vars)
+        case ">":
+            return comparison.gt(ast, vars)
+        case "!=":
+            return comparison.neq(ast, vars)
+        case "<=":
+            return comparison.leq(ast, vars)
+        case ">=":
+            return comparison.geq(ast, vars)
 
         case "and":
             return logic.and(ast, vars)

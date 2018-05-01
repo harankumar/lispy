@@ -8,3 +8,6 @@
 
 (map square (range 10))
 (map square (list 1 2 3 4))
+
+(cond true "it's true!" "it's false")
+(cond false "it's true" "it's false")
