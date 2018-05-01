@@ -5,7 +5,7 @@ module.exports = {
 }
 
 function tokenize(program) {
-    program = program.replace(/#[^\n]*\n/g, "")
+    program = program.replace(/#[^\n]*[\n$]/g, "")
     const tokens = []
     const string_split = program.split('"')
 

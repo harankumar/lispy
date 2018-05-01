@@ -67,7 +67,7 @@ function reduce(ast, vars) {
     return list.reduce(func, init)
 }
 
-function filter(ast, vars){
+function filter(ast, vars) {
     const func = vars[ast[1].value]
     const list = walk(ast[2], vars)
 
