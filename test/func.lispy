@@ -12,5 +12,5 @@
 (if true "it's true!" "it's false")
 (if false "it's true!" "it's false")
 
-(defun foo (x y) (+ x y))
-(foo 10 10)
+(defun add (x y) (+ x y))
+(reduce add 0 (list 1 2 3 4 5))

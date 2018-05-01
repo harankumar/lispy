@@ -30,7 +30,7 @@ function defun(ast, vars) {
 
 function map(ast, vars) {
     const func = vars[ast[1].value]
-    const list = walk(ast[2], walk)
+    const list = walk(ast[2], vars)
 
     return list.map(func)
 }
@@ -59,6 +59,14 @@ function range(ast, vars) {
     return ret
 }
 
+function reduce(ast, vars) {
+    const func = vars[ast[1].value]
+    const init = walk(ast[2], vars)
+    const list = walk(ast[3], vars)
+
+    return list.reduce(func, init)
+}
+
 function _if(ast, vars) {
     const test = walk(ast[1], vars)
 
@@ -82,6 +90,8 @@ function call(ast, vars) {
             return ast.slice(1).map((x) => walk(x, vars))
         case "if":
             return _if(ast, vars)
+        case "reduce":
+            return reduce(ast, vars)
     }
 
     const func = vars[ast[0].value]
