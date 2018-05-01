@@ -36,7 +36,7 @@ function classify(token) {
     } else if (token[0] === '"') {
         classification.value = token.slice(1, token.length - 1)
         classification.type = "string"
-    } else if (/^[0-9]+(\.[0-9]+)?$/.test(token)) {
+    } else if (/^-?[0-9]+(\.[0-9]+)?$/.test(token)) {
         // No point in separating ints and floats b/c JS can't handle it
         classification.value = Number.parseFloat(token)
         classification.type = "float"
