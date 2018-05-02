@@ -1,7 +1,2 @@
-(html
-(head)
-(body
-    (div "Alec Loves Spark")
-    (b (+ "Michael " (i "really") " loves spark"))
-)
-)
+(div ((id "my-div")
+      (class "my-class")) "Test")

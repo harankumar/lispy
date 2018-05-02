@@ -12,8 +12,14 @@ function is_tag(tag) {
 
 function tag_render(ast, vars) {
     const tag = ast[0].value
-    const innerHTML = ast.slice(1).map((el) => walk(el, vars)).join("")
+    const attributes = ast[1]
+        .map((attr) => `${attr[0].value}="${attr[1].value}"`)
+        .join(" ")
+    const innerHTML = ast
+        .slice(2)
+        .map((el) => walk(el, vars))
+        .join("")
 
-    return `<${tag}>\n${innerHTML}\n</${tag}>\n`
+    return `<${tag} ${attributes}>\n${innerHTML}\n</${tag}>\n`
 }
 
