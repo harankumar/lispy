@@ -1,12 +1,14 @@
 (fun flip (i j)
-    (= 0 (% (* i j) 2)))
+    (= 0 (% (+ i j) 2)))
 
 (fun tile (is-black)
-    (div ((style "color: red"))
-        "Hello World"
-    ))
+    (td ((style (+ "width: 50px;"
+                   "height: 50px;"
+                   "background-color: " (if is-black "black" "white"))))))
 
-(for i in (range 1 9)
-    (for j in (range 1 9)
-        (tile (flip i j))))
+(table ()
+    (for i in (range 1 9)
+        (tr ()
+            (for j in (range 1 9)
+                (tile (flip i j))))))
 

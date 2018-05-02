@@ -7,7 +7,7 @@
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <style>
-        body, table, tr, div {
+        body, table.main, tr.row, div {
             width: 100%;
             font-size: 16px;
         }
@@ -17,7 +17,7 @@
             width: 100%;
         }
 
-        td {
+        td.col {
             padding: 15px;
             vertical-align: top;
             width: 50%;
@@ -31,14 +31,14 @@
 </head>
 <body>
 
-<table>
-    <tr>
-        <td>
+<table class="main">
+    <tr class="row">
+        <td class="col">
             <div id="code"></div>
             <br>
             <button id="run" class="btn btn-primary">Run</button>
         </td>
-        <td>
+        <td class="col">
             <div id="output"></div>
         </td>
     </tr>

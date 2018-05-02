@@ -7,7 +7,18 @@ module.exports = run
 function run(program) {
     const tokens = parser.tokenize(program)
     const ast = parser.parse(tokens)
-    const output = walk(ast, {})
 
-    return flatten(output.filter((x) => x !== "")).join("\n")
+    const output = walk(ast, {})
+        .filter((x) => x !== "")
+        .map((x) => {
+            if (Array.isArray(x))
+                return flatten(x).join(" ")
+            else
+                return x
+        })
+        .join(" ")
+
+    // console.log(walk(ast, {}))
+
+    return output
 }

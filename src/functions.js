@@ -107,8 +107,7 @@ function _for(ast, vars) {
     if (block_scope)
         delete vars[loop_var]
 
-    // console.log(ret)
-    return ret
+    return ret.join(" ")
 }
 
 function call(ast, vars) {
