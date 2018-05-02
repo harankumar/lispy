@@ -18,3 +18,10 @@
 
 (fun big (x) (> x 9000))
 (filter big (list 1 2 10000 1 9999999))
+
+(let x 5)
+(fun setx (val) (set x val))
+
+(print x)
+(setx 6)
+(print x)

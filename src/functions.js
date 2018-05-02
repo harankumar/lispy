@@ -8,19 +8,36 @@ const html = require("./html")
 
 function fun(ast, vars) {
     const name = ast[1].value
-    const params = ast[2]
+    const params = ast[2].map((p) => p.value)
     const block = ast[3]
 
     const func = function () {
-        const args = {}
+        // Save stuff to be recovered when we leave the function's scope
+        const overwritten_vars = {}
+        for (let param of params){
+            if (vars[param])
+                overwritten_vars[param] = vars[param]
+        }
+
+        // Get the arguments
         let i = 0
         for (let param of params) {
-            args[param.value] = arguments[i]
+            vars[param] = arguments[i]
             i++
         }
 
-        // Functions can't access global scope
-        return walk(block, args)
+        // Evaluate function
+        const ret = walk(block, vars)
+
+        // Clean up
+        for (let param of params){
+            if (overwritten_vars[param])
+                vars[param] = overwritten_vars[param]
+            else
+                delete vars[param]
+        }
+
+        return ret
     }
 
     vars[name] = func
