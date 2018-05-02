@@ -5,13 +5,13 @@ module.exports = {
 }
 
 function tokenize(program) {
-    program = program.replace(/;[^\n]*[\n$]/g, "")
     const tokens = []
     const string_split = program.split('"')
 
     for (let i = 0; i < string_split.length; i++) {
         // Every other element is the interior of a string
         if (i % 2 === 0) {
+            string_split[i] = string_split[i].replace(/;[^\n]*[\n$]/g, "")
             const sep_split = string_split[i]
                 .replace(/\(/g, " ( ") // so that parens get their own tokens, regardless of whitespace
                 .replace(/\)/g, " ) ")
