@@ -137,5 +137,8 @@ function call(ast, vars) {
     const func = vars[ast[0].value]
     const args = ast.slice(1).map((arg) => walk(arg, vars))
 
-    return func(...args)
+    if (typeof func === "function")
+        return func(...args)
+    else
+        console.log(`${ast[0].value} is not a function!`)
 }
