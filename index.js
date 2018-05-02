@@ -11,7 +11,7 @@ editor.session.setMode("ace/mode/lisp");
 document.getElementById("run").onclick = function () {
     const program = editor.getValue()
 
-    const output = run(program)
+    const output = run(program).replace(/\n/g, "<br/>")
 
     document.getElementById("output").innerHTML = output
 
