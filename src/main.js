@@ -1,15 +1,12 @@
-const fs = require("fs")
-
 const parser = require("./parser")
 const walk = require("./walk")
 
-// Run the file from the command line
-const file = process.argv[2]
-const program = fs.readFileSync(file).toString()
+module.exports = run
 
-const output = walk(parser.parse(parser.tokenize(program)), {})
-                .filter((x) => x !== "").join("\n")
+function run(program) {
+    const tokens = parser.tokenize(program)
+    const ast = parser.parse(tokens)
+    const output = walk(ast, {})
 
-// Output to file
-const outputFile = file.split(".").slice(0, -1).join(".") + ".html"
-fs.writeFileSync(outputFile, output)
+    return output.filter((x) => x !== "").join("\n")
+}
