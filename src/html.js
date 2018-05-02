@@ -13,7 +13,7 @@ function is_tag(tag) {
 function tag_render(ast, vars) {
     const tag = ast[0].value
     const attributes = ast[1]
-        .map((attr) => `${attr[0].value}="${attr[1].value}"`)
+        .map((attr) => `${attr[0].value}="${walk(attr[1], vars)}"`)
         .join(" ")
     const innerHTML = ast
         .slice(2)
