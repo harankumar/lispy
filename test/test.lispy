@@ -1,6 +1,6 @@
-(defvar foo 2)
+(let foo 2)
 
-(defvar bar 123)
+(let bar 123)
 
 (+ foo bar bar)
 
@@ -14,9 +14,9 @@
 
 (% bar foo)
 
-(defvar baz true)
+(let baz true)
 
-(defvar bop false)
+(let bop false)
 
 (and baz bop)
 
@@ -28,6 +28,6 @@
 
 (foo)
 
-(defun square (x) (* x x))
+(fun square (x) (* x x))
 
 (square 10)

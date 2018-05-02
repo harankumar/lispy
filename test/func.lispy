@@ -1,4 +1,4 @@
-(defun square (x) (* x x))
+(fun square (x) (* x x))
 
 (square 10)
 
@@ -13,8 +13,8 @@
 (if false "it's true!" "it's false")
 
 # Can't do + just yet b/c it's a "special" function
-(defun add (x y) (+ x y))
+(fun add (x y) (+ x y))
 (reduce add 0 (list 1 2 3 4 5))
 
-(defun big (x) (> x 9000))
+(fun big (x) (> x 9000))
 (filter big (list 1 2 10000 1 9999999))

@@ -57,13 +57,13 @@ function walk(ast, vars) {
         case "not":
             return logic.not(ast, vars)
 
-        case "defvar":
-            return variables.defvar(ast, vars)
+        case "let":
+            return variables._let(ast, vars)
         case "set":
             return variables.set(ast, vars)
 
-        case "defun":
-            return functions.defun(ast, vars)
+        case "fun":
+            return functions.fun(ast, vars)
 
         default:
             // It's a function!

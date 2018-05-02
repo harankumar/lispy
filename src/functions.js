@@ -1,12 +1,12 @@
 module.exports = {
-    defun: defun,
+    fun: fun,
     call: call
 }
 
 const walk = require("./walk")
 const html = require("./html")
 
-function defun(ast, vars) {
+function fun(ast, vars) {
     const name = ast[1].value
     const params = ast[2]
     const block = ast[3]
