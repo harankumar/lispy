@@ -84,7 +84,7 @@ function _if(ast, vars) {
 }
 
 function print(ast, vars) {
-    return ast.slice(1).map(walk).join(" ")
+    return ast.slice(1).map((x) => walk(x, vars)).join(" ") + "<br/>"
 }
 
 function _for(ast, vars) {
