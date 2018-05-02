@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Lispy Live Editor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <style>
+        body, table, tr, textarea {
+            width: 100%;
+        }
+
+        td {
+            padding: 15px;
+            vertical-align: top;
+            width: 50%;
+        }
+
+        #output {
+
+        }
+
+    </style>
 </head>
 <body>
 
-<textarea name="code" id="code" cols="30" rows="10"></textarea>
-<br>
-<button id="run">Run</button>
-<hr>
-<div id="output"></div>
+<table>
+    <tr>
+        <td><textarea name="code" id="code" cols="30" rows="10"></textarea>
+            <br>
+            <button id="run" class="btn btn-primary">Run</button>
+        </td>
+        <td>
+            <div id="output"></div>
+        </td>
+    </tr>
+</table>
+
 
 <script src="out/bundle.js"></script>
 
