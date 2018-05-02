@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9208ee2-8edb-4aac-b6b6-05b342299d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/functions.js" afterPath="$PROJECT_DIR$/src/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/variables.js" afterPath="$PROJECT_DIR$/src/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/walk.js" afterPath="$PROJECT_DIR$/src/walk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/func.lispy" afterPath="$PROJECT_DIR$/test/func.lispy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.lispy" afterPath="$PROJECT_DIR$/test/test.lispy" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,21 +16,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="walk.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/walk.js">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="290">
+              <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+              <folding>
+                <element signature="e#17#49#0" expanded="false" />
+                <element signature="n#!!block;n#fun#0" expanded="false" />
+                <element signature="e#251#488#0" expanded="false" />
+                <element signature="e#329#401#0" expanded="false" />
+                <element signature="n#!!block;n#map#0" expanded="false" />
+                <element signature="n#!!block;n#range#0" expanded="false" />
+                <element signature="e#761#1030#0" expanded="false" />
+                <element signature="e#791#877#0" expanded="false" />
+                <element signature="e#886#931#0" expanded="false" />
+                <element signature="e#940#1024#0" expanded="false" />
+                <element signature="n#!!block;n#reduce#0" expanded="false" />
+                <element signature="n#!!block;n#filter#0" expanded="false" />
+                <element signature="n#!!block;n#_if#0" expanded="false" />
+                <element signature="e#1739#1788#0" expanded="false" />
+                <element signature="e#1826#1871#0" expanded="false" />
+                <element signature="e#1880#1929#0" expanded="false" />
+                <element signature="e#1938#2008#0" expanded="false" />
+                <element signature="e#2017#2061#0" expanded="false" />
+                <element signature="e#2070#2121#0" expanded="false" />
+                <element signature="e#2130#2181#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="variables.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/variables.js">
+      <file leaf-file-name="walk.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/walk.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="326">
+              <caret line="67" column="16" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -101,10 +117,10 @@
         <option value="$PROJECT_DIR$/test/html.lispy" />
         <option value="$PROJECT_DIR$/test/func.lispy" />
         <option value="$PROJECT_DIR$/out/bundle.js" />
-        <option value="$PROJECT_DIR$/src/functions.js" />
         <option value="$PROJECT_DIR$/test/test.lispy" />
         <option value="$PROJECT_DIR$/src/walk.js" />
         <option value="$PROJECT_DIR$/src/variables.js" />
+        <option value="$PROJECT_DIR$/src/functions.js" />
       </list>
     </option>
   </component>
@@ -306,15 +322,16 @@
       <workItem from="1525129490913" duration="5165000" />
       <workItem from="1525137527195" duration="646000" />
       <workItem from="1525140165847" duration="2056000" />
-      <workItem from="1525263526478" duration="6928000" />
+      <workItem from="1525263526478" duration="7085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30201000" />
+    <option name="totallyTimeSpent" value="30358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="960" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33226153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -324,7 +341,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964134" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39784947" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39784947" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -601,37 +618,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/functions.js">
+    <entry file="file://$PROJECT_DIR$/src/variables.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <element signature="e#251#488#0" expanded="false" />
-            <element signature="e#329#401#0" expanded="false" />
-            <element signature="n#!!block;n#map#0" expanded="false" />
-            <element signature="n#!!block;n#range#0" expanded="false" />
-            <element signature="e#761#1030#0" expanded="false" />
-            <element signature="n#!!block;n#filter#0" expanded="false" />
-            <element signature="n#!!block;n#_if#0" expanded="false" />
-            <element signature="e#1665#1714#0" expanded="false" />
-            <element signature="e#1720#2113#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/walk.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="326">
+          <caret line="67" column="16" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/variables.js">
+    <entry file="file://$PROJECT_DIR$/src/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="290">
+          <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+          <folding>
+            <element signature="e#17#49#0" expanded="false" />
+            <element signature="n#!!block;n#fun#0" expanded="false" />
+            <element signature="e#251#488#0" expanded="false" />
+            <element signature="e#329#401#0" expanded="false" />
+            <element signature="n#!!block;n#map#0" expanded="false" />
+            <element signature="n#!!block;n#range#0" expanded="false" />
+            <element signature="e#761#1030#0" expanded="false" />
+            <element signature="e#791#877#0" expanded="false" />
+            <element signature="e#886#931#0" expanded="false" />
+            <element signature="e#940#1024#0" expanded="false" />
+            <element signature="n#!!block;n#reduce#0" expanded="false" />
+            <element signature="n#!!block;n#filter#0" expanded="false" />
+            <element signature="n#!!block;n#_if#0" expanded="false" />
+            <element signature="e#1739#1788#0" expanded="false" />
+            <element signature="e#1826#1871#0" expanded="false" />
+            <element signature="e#1880#1929#0" expanded="false" />
+            <element signature="e#1938#2008#0" expanded="false" />
+            <element signature="e#2017#2061#0" expanded="false" />
+            <element signature="e#2070#2121#0" expanded="false" />
+            <element signature="e#2130#2181#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

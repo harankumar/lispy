@@ -83,6 +83,10 @@ function _if(ast, vars) {
         return walk(ast[3], vars)
 }
 
+function print(ast, vars){
+    return ast.slice(1).map(walk).join(" ")
+}
+
 function call(ast, vars) {
     if (html.is_tag(ast[0].value)) {
         return html.tag_render(ast, vars)
@@ -101,6 +105,8 @@ function call(ast, vars) {
             return reduce(ast, vars)
         case "filter":
             return filter(ast, vars)
+        case "print":
+            return print(ast, vars)
     }
 
     const func = vars[ast[0].value]
