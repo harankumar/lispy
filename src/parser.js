@@ -6,7 +6,8 @@ module.exports = {
 
 function tokenize(program) {
     // Remove comments, hacky but more or less gets the job done
-    program = program.replace(/;[^\n]*[\n$]/g, "")
+    program = program.replace(/[\n^];[^\n]*[\n$]/g, " ")
+    console.log(program)
     const tokens = []
     const string_split = program.split('"')
 
