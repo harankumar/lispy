@@ -1,0 +1,145 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; HELLO WORLD
+; Comments start with semicolons
+; (print "Hello World!")
+
+; Variables work like you'd expect
+; (let x 5)
+; (print x)
+; (set x "Hello World!")
+; (print x)
+
+; Same Data Types as JS (Strings, Numbers, Arrays, Bools, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; INFIX NOTATION
+; Operator first, Lisp style
+; (print (+ 1 1))
+; (print (- 3 1))
+
+; Variadic functions!
+; (print (+ 1 1 1 1 1 1 1))
+; (print (* 12 124 124 123))
+
+; FUNCTIONS
+; (fun square (x) (* x x))
+; (print (square 7))
+
+; LIST MANIPULATION
+; (let power-levels (list 1 10000 2 9999999999 -123214 55 4 9001))
+; (fun OVER-9000 (x) (> x 9000))
+; (print (filter OVER-9000 power-levels))
+
+; Other handy array functions like in other functional languages
+; e.g. reduce, map, range
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; HTML
+; (div () "Hello HTML!")
+
+; Attributes
+; (div ((style "color: red; float: right; width: 50px;")) "Well isn't this neat?")
+
+; Anything you can do in HTML, you can do with lispy
+; (iframe ((width "560")
+;         (height "315")
+;         (src "https://www.youtube.com/embed/dQw4w9WgXcQ")
+;         (frameborder "0")
+;         (allow "autoplay; encrypted-media")
+;         (allowfullscreen "true")))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; EXAMPLE
+
+; (fun flip (i j)
+;     (= 0 (% (+ i j) 2)))
+
+; (fun tile (is-black)
+;     (td ((style (+ "width: 50px;"
+;                   "height: 50px;"
+;                   "background-color: " (if is-black "black" "red"))))))
+
+
+; (fun checkerboard (size)
+;     (table ()
+;         (for i in (range 1 (+ 1 size))
+;             (tr ()
+;                 (for j in (range 1 (+ 1 size))
+;                     (tile (flip i j)))))))
+; (checkerboard 8)
+
+; (checkerboard 2)
