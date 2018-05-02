@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d9208ee2-8edb-4aac-b6b6-05b342299d3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/html.js" afterPath="$PROJECT_DIR$/src/html.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/html.lispy" afterPath="$PROJECT_DIR$/test/html.lispy" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="html.lispy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/html.lispy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+            <state relative-caret-position="36">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -95,8 +94,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/parser.js" />
-        <option value="$PROJECT_DIR$/test/html.lispy" />
         <option value="$PROJECT_DIR$/src/html.js" />
+        <option value="$PROJECT_DIR$/test/html.lispy" />
       </list>
     </option>
   </component>
@@ -298,12 +297,12 @@
       <workItem from="1525129490913" duration="5165000" />
       <workItem from="1525137527195" duration="646000" />
       <workItem from="1525140165847" duration="2056000" />
-      <workItem from="1525263526478" duration="5022000" />
+      <workItem from="1525263526478" duration="5068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28295000" />
+    <option name="totallyTimeSpent" value="28341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="960" height="1057" extended-state="0" />
@@ -617,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/html.lispy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="36">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>

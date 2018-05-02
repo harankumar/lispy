@@ -1,2 +1,3 @@
 (div ((id "my-div")
-      (class "my-class")) "Test")
+      (class "my-class")
+      (style "color: red")) "Test")
