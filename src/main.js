@@ -1,5 +1,6 @@
 const parser = require("./parser")
 const walk = require("./walk")
+const flatten = require("flatten")
 
 module.exports = run
 
@@ -8,5 +9,5 @@ function run(program) {
     const ast = parser.parse(tokens)
     const output = walk(ast, {})
 
-    return output.filter((x) => x !== "").join("\n")
+    return flatten(output.filter((x) => x !== "")).join("\n")
 }

@@ -83,8 +83,32 @@ function _if(ast, vars) {
         return walk(ast[3], vars)
 }
 
-function print(ast, vars){
+function print(ast, vars) {
     return ast.slice(1).map(walk).join(" ")
+}
+
+function _for(ast, vars) {
+    /**
+     * (for x in (range 1 10) (print x))
+     *
+     * */
+    const loop_var = ast[1].value;
+    const list = walk(ast[3], vars)
+    const block = ast[4]
+
+    const block_scope = !vars.hasOwnProperty(loop_var)
+    const ret = []
+
+    for (let el of list) {
+        vars[loop_var] = el
+        ret.push(walk(block, vars))
+    }
+
+    if (block_scope)
+        delete vars[loop_var]
+
+    // console.log(ret)
+    return ret
 }
 
 function call(ast, vars) {
@@ -107,10 +131,12 @@ function call(ast, vars) {
             return filter(ast, vars)
         case "print":
             return print(ast, vars)
+        case "for":
+            return _for(ast, vars)
     }
 
     const func = vars[ast[0].value]
-    const args = ast.slice(1).map(walk)
+    const args = ast.slice(1).map((arg) => walk(arg, vars))
 
     return func(...args)
 }

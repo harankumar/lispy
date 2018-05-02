@@ -1,6 +1,5 @@
 const run = require("./src/main.js")
 
-
 const editor = ace.edit("code");
 editor.setTheme("ace/theme/chrome");
 editor.setOptions({
