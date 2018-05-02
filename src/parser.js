@@ -4,10 +4,12 @@ module.exports = {
     parse: parse
 }
 
-function tokenize(program) {
+function tokenize(prog) {
     // Remove comments, hacky but more or less gets the job done
-    program = program.replace(/[\n^];[^\n]*[\n$]/g, " ")
-    console.log(program)
+    let program = ""
+    for (let line of prog.split("\n"))
+        if (line[0] !== ";")
+            program += line + "\n"
     const tokens = []
     const string_split = program.split('"')
 
