@@ -6,10 +6,18 @@ editor.setOptions({
     fontSize: "16px"
 })
 editor.session.setMode("ace/mode/lisp");
+editor.commands.addCommand({
+    name: "compile",
+    bindKey: {win: "Ctrl-Enter", mac: "Ctrl-Enter", linux: "Ctrl-Enter"},
+    exec: compileAndUpdate,
+    readOnly: true
+})
 
-document.getElementById("run").onclick = function () {
+function compileAndUpdate() {
     const program = editor.getValue()
 
     document.getElementById("output").innerHTML = run(program)
 
 }
+
+document.getElementById("run").onclick = compileAndUpdate
