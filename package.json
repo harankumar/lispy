@@ -4,7 +4,8 @@
   "description": "A tiny lisp",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "build": "browserify index.js -o out/bundle.js",
+    "watch": "watchify index.js -o out/bundle.js -v"
   },
   "keywords": [
     "lisp"
